@@ -1,6 +1,6 @@
+nose
 parameterized
 peppercorn
-pyhamcrest
 
 [dev]
 check-manifest

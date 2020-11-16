@@ -12,8 +12,8 @@ from nose.tools import assert_equal, assert_raises
     ("GGACGGATTCTG", "AGGACGGATTCT", 9),
 ])
 def test_hamming_third_option(input_one, input_two, expected):
-    fast_check = hamming()
-    assert_equal(fast_check.distance(input_one, input_two), expected)
+    tmp = hamming()
+    assert_equal(tmp.distance(input_one, input_two), expected)
 
 
 class HammingTest(unittest.TestCase):
@@ -41,6 +41,21 @@ class HammingTest(unittest.TestCase):
 class HammingTest2(unittest.TestCase):
     def test_hamming_parameterized(self):
         self.assertEqual(self.tmp.distance(self.input_one, self.input_two), self.expected)
+
+    def setUp(self):
+        self.tmp = hamming()
+
+
+@parameterized_class(('input_one', 'input_two', 'expected'), [
+    ("AATG", "AAA", ValueError),
+    ("ATA", "AGTG", ValueError),
+    ("", "G", ValueError),
+    ("G", "", ValueError),
+    (253, 23, TypeError),
+])
+class TestExceptions(unittest.TestCase):
+    def test_error(self):
+        assert_raises(self.expected, self.tmp.distance, self.input_one, self.input_two)
 
     def setUp(self):
         self.tmp = hamming()
