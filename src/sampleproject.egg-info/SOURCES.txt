@@ -5,11 +5,10 @@ pyproject.toml
 setup.cfg
 setup.py
 data/data_file
-data/fizz_buzz_data_test
-src/sample/FizzBuzz.py
+data/zad01.txt
 src/sample/__init__.py
 src/sample/package_data.dat
-src/sample/simple.py
+src/sample/zad01.py
 src/sampleproject.egg-info/PKG-INFO
 src/sampleproject.egg-info/SOURCES.txt
 src/sampleproject.egg-info/dependency_links.txt
