@@ -1,0 +1,9 @@
+parameterized
+peppercorn
+pyhamcrest
+
+[dev]
+check-manifest
+
+[test]
+coverage
