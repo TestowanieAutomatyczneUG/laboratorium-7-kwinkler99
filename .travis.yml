@@ -1,11 +1,14 @@
 language: python
+
 python:
   - "3.5"
   - "3.6"
   - "3.7"
   - "3.8"
-# command to install dependencies
-install: pip install -r requirements.txt
 
-script: python3 setup.py test
+install: pip install tox-travis
 
+script: python setup.py test
+
+notifications:
+  email: false
