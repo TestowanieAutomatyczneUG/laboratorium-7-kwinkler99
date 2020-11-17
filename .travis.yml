@@ -1,16 +1,15 @@
 language: python
-
 python:
   - "3.5"
   - "3.6"
   - "3.7"
   - "3.8"
-
-install: pip install tox-travis
+# command to install dependencies
+install: pip install -r requirements.txt
 
 script: tox
 
 notifications:
   email: false
 
-repo_token: oVuvUz3FCHfXUWVGdDe0K36VjTWOPA1Wr
+repo_token: MZeWQHqhJeVQ4iMtzsjybaSWJ3JD0ejUq
